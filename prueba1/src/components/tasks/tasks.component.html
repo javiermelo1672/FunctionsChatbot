@@ -1,0 +1,81 @@
+<div class="backgrounddiv">
+    <div class="title">
+        <h4 >
+            ¡Agrega tu Task!
+        </h4>
+    </div>
+    <div  class="subtitle">
+        <h6 >
+            A continuación puedes ver como funciona nuestro task
+        </h6>
+    </div>
+<div class="row">
+    <div class="card_2  d-flex col-md-6">
+        
+        <div class="card">
+            <div class="card-body">
+                <form (ngSubmit)="onSubmitTemplate()" >
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Nombre Tarea</label>
+                        <input  [(ngModel)]="tasks.tittle" name="nombre" type="text"  class="form-control"  required placeholder="Tarea #1" >
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Descripcion</label>
+                        <textarea [(ngModel)]="tasks.description" name="descripcion"  class="form-control"   placeholder="Editar clases 1 y 2" required></textarea>
+                      </div>
+                    </div>
+                    <button  class="btn btn-primary">Añadir Tarea</button>
+                  </form>
+         </div>
+                
+        </div>
+      
+    </div>
+    
+    <div class="card_2  d-flex col-md-6">
+        
+        <div class="card">
+
+            
+            <ul *ngIf="task" class="list-group">
+                <div *ngFor="let tasks of task ">
+                    <!-- Default checked -->
+                    <li type="checkbox" class="list-group-item"><b>{{tasks.tittle}}</b>-{{tasks.description}}-{{tasks.date}}
+                        <button (click)=" mostrareditar(tasks)" class="btn btn-primary">Editar</button>
+                        <button (click)="deleteTask(tasks)"type="button" class="btn btn-danger" >Eliminar</button></li>
+                    
+                </div>
+              </ul>
+            <div *ngIf="showedit" class="card-body">
+                <form (ngSubmit)="onSubmitTemplate2()">
+                    <div  class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Nombre Tarea</label>
+                        <input [(ngModel)]="name1"  name="nombre" type="text"  class="form-control"  required placeholder="Tarea #1" >
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Descripcion</label>
+                        <textarea [(ngModel)]="name2"  name="descripcion" class="form-control" placeholder="Envia tu tarea" required></textarea>
+                      </div>
+                    </div>
+                    <div class="row  justify-content-center">
+                        <div class="col-md-6  justify-content-center">
+                            <button  type="submit" class="btn btn-primary">Editar</button>
+                        </div>
+                        <div class="col-md-6  justify-content-center">
+                            
+                        </div>
+                        
+                        
+                    </div>
+                   
+                  </form>
+         </div>
+                
+        </div>
+</div>
+   
+      
+    </div>
+</div>

@@ -1,0 +1,56 @@
+
+<div class="backgrounddiv">
+    <div class="title">
+        <h4 >
+            !Envíanos un mensaje con tus dudas!
+        </h4>
+    </div>
+    <div  class="subtitle">
+        <h6 >
+            Te responderemos tan pronto como podamos
+        </h6>
+    </div>
+
+    <div class="card_2 row d-flex justify-content-center">
+        
+            <div class="card">
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmitTemplate()">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nombre</label>
+                            <input [(ngModel)]="contact.name"  name="name" type="text"  class="form-control"  required placeholder="Javier Melo" >
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Empresa</label>
+                            <input  [(ngModel)]="contact.organization"  name="organizacion" type="text" class="form-control" required placeholder="Javier Melo S.A.S">
+                          </div>
+                        </div>
+                        <div class="form-row ">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Email</label>
+                                <input  [(ngModel)]="contact.email"  name="email" type="email"  class="form-control"  required placeholder="aaaaaaa@bbbbb.com">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputAddress2">Dirección</label>
+                                <input type="text"   [(ngModel)]="contact.address"  name="address" class="form-control"  required placeholder="calle bb # cc-dd norte">
+                              </div>
+                        </div>
+                       
+                        
+                          <div class="form-group">
+                            <label for="inputCity">Mensaje</label>
+                            <textarea [(ngModel)]="contact.message"  name="message" class="form-control"   placeholder="Envia tu mensaje" required></textarea>
+                          </div>
+                          
+                          
+                        <button type="submit" class="btn btn-primary" >Enviar</button>
+                      </form>
+ </div>
+                    
+            </div>
+          
+        </div>
+        
+        
+</div>

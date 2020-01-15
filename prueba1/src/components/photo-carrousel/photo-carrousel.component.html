@@ -1,0 +1,19 @@
+  <ngb-carousel *ngIf="photos" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+    <ng-template ngbSlide *ngFor="let photo of photos">
+      <div class="picsum-img-wrapper">
+        <img [src]="photo.url" alt="Random slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>{{photo.tittle}}</h3>
+        <p> <p>{{photo.description}}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  
+  <hr>
+  
+  <div class="btn-group" role="group" aria-label="Carousel toggle controls">
+    <button type="button" (click)="showNavigationArrows = !showNavigationArrows" class="btn btn-outline-dark btn-sm">Mostrar Flechas</button>
+    <button type="button" (click)="showNavigationIndicators = !showNavigationIndicators" class="btn btn-outline-dark btn-sm">Mostrar indicadores</button>
+  </div>
+  
